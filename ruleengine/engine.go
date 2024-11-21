@@ -1,7 +1,9 @@
-package main
+package ruleengine
 
-// Rule evaluation logic based only on pincode
-func evaluateRules(input RuleInput) RuleOutput {
+import "GoRules-Project/model"
+
+// EvaluateRules applies the rules based on the pincode
+func EvaluateRules(input model.RuleInput) model.RuleOutput {
 	var discount float64
 	var message string
 
@@ -16,9 +18,8 @@ func evaluateRules(input RuleInput) RuleOutput {
 		message = "No discount available for this pincode."
 	}
 
-	return RuleOutput{
+	return model.RuleOutput{
 		DiscountPercent: discount,
 		Message:         message,
 	}
 }
-

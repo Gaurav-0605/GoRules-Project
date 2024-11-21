@@ -1,15 +1,15 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"github.com/gorilla/mux"
+	"GoRules-Project/ruleengine"
 )
 
 func main() {
 	// Setting up the router
 	router := mux.NewRouter()
-	router.HandleFunc("/evaluate", ruleHandler).Methods("POST")
+	router.HandleFunc("/evaluate", ruleengine.RuleHandler).Methods("POST")
 
 	// Enable CORS
 	http.ListenAndServe(":8080", enableCors(router))

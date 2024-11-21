@@ -1,4 +1,4 @@
-module project-1
+module GoRules-Project
 
 go 1.22.3
 
